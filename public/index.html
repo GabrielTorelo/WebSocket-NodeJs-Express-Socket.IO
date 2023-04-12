@@ -15,6 +15,12 @@
     <script type="text/javascript">
         let socket;
 
+        if (socket) {
+            socket.on('received', message => {
+                console.log(message);
+            })
+        }
+
         document.getElementById('join').addEventListener('click', () => {
             if (!socket) {
                 socket = new io('http://localhost:3333');
