@@ -23,7 +23,11 @@
 
         document.getElementById('join').addEventListener('click', () => {
             if (!socket) {
-                socket = new io('http://localhost:3333');
+                socket = new io('https://showy-wild-dracorex.glitch.me', {
+                    headers: {
+                        "user-agent": "Mozilla"
+                    }
+                });
             }
 
             socket.on('received', message => {
